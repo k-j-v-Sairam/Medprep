@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Neuro-Nexus - Vault</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary-fixed": "#e1e0ff",
+                      "primary": "#c0c1ff",
+                      "on-error-container": "#ffdad6",
+                      "on-secondary-fixed-variant": "#005048",
+                      "secondary-fixed-dim": "#4fdbc8",
+                      "on-tertiary": "#003915",
+                      "tertiary-fixed": "#6bff8f",
+                      "secondary-container": "#04b4a2",
+                      "surface-container-highest": "#34343d",
+                      "tertiary-container": "#00a74b",
+                      "background": "#13131b",
+                      "on-background": "#e4e1ed",
+                      "on-tertiary-fixed": "#002109",
+                      "on-tertiary-container": "#003111",
+                      "on-secondary-container": "#003f38",
+                      "surface-container-lowest": "#0d0d15",
+                      "surface-container-high": "#292932",
+                      "tertiary": "#4ae176",
+                      "error": "#ffb4ab",
+                      "primary-fixed-dim": "#c0c1ff",
+                      "outline": "#908fa0",
+                      "on-primary": "#1000a9",
+                      "inverse-surface": "#e4e1ed",
+                      "on-primary-container": "#0d0096",
+                      "surface-container-low": "#1b1b23",
+                      "inverse-primary": "#494bd6",
+                      "on-surface": "#e4e1ed",
+                      "inverse-on-surface": "#303038",
+                      "error-container": "#93000a",
+                      "primary-container": "#8083ff",
+                      "outline-variant": "#464554",
+                      "surface-bright": "#393841",
+                      "tertiary-fixed-dim": "#4ae176",
+                      "surface-container": "#1f1f27",
+                      "on-tertiary-fixed-variant": "#005321",
+                      "on-secondary": "#003731",
+                      "on-primary-fixed": "#07006c",
+                      "secondary-fixed": "#71f8e4",
+                      "surface-dim": "#13131b",
+                      "surface-variant": "#34343d",
+                      "on-secondary-fixed": "#00201c",
+                      "on-error": "#690005",
+                      "secondary": "#4fdbc8",
+                      "surface-tint": "#c0c1ff",
+                      "on-surface-variant": "#c7c4d7",
+                      "on-primary-fixed-variant": "#2f2ebe",
+                      "surface": "#13131b"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "md": "24px",
+                      "sm": "12px",
+                      "margin-mobile": "16px",
+                      "lg": "40px",
+                      "base": "8px",
+                      "xl": "64px",
+                      "margin-desktop": "48px",
+                      "gutter": "20px",
+                      "xs": "4px"
+              },
+              "fontFamily": {
+                      "display-lg-mobile": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "display-lg": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "label-sm": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "display-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        body {
+            background-color: #080810;
+        }
+        .glass-panel {
+            background: rgba(31, 31, 39, 0.4);
+            backdrop-filter: blur(24px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+        }
+        .glow-emerald {
+            box-shadow: 0 0 40px rgba(74, 225, 118, 0.2);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-on-background min-h-screen pb-24 md:pb-0 pt-20">
+<!-- TopAppBar (Hidden on Mobile, Visible on Desktop as part of nav shell logic if applicable, but per prompt, standard TopAppBar) -->
+<header class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-3xl border-b border-white/10 shadow-xl flex items-center justify-between px-margin-mobile md:px-margin-desktop h-16">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">psychology</span>
+<h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-primary tracking-tight shadow-primary/20 drop-shadow-[0_0_15px_rgba(192,193,255,0.4)]">Neuro-Nexus</h1>
+</div>
+<button class="hover:bg-white/5 transition-colors active:scale-95 duration-200 p-2 rounded-full">
+<span class="material-symbols-outlined text-on-surface-variant">settings</span>
+</button>
+</header>
+<main class="px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto space-y-lg mt-md">
+<!-- Profile & Streak Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-md">
+<!-- User Profile -->
+<div class="glass-panel rounded-xl p-md flex flex-col items-center justify-center text-center md:col-span-1">
+<div class="w-24 h-24 rounded-full overflow-hidden mb-sm border-2 border-primary/30 relative">
+<img alt="User Avatar" class="object-cover w-full h-full" data-alt="A highly detailed close-up portrait of a professional medical student in a futuristic clinical setting. The lighting is moody and cinematic, with soft neon blue and teal rim lights reflecting off their white coat, conveying a deep-work, high-performance atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyhAHEfC3aoy0w4saRHOM5byqlYXcCUHGUnJ_QIxnl2wu5_2hcp7I-laWC6VPTHVVoqkV0dExkIw26yRdX1F3rPnKn9_DJfjf1dIXYsxTK9UEfRE_zVYVluqG1_soDL3AY7cHs6iDO_j_513QkcOlxyR4kFMrMTfhVvY60oGSqO-blxCrFhq98ZEgBvAQvD2vFPhGJdd0tMl0U-Kk8kyedcLqoVCY6m59HKi2MkkLagsMOAYRe2n9G6LTTXnKK0Agyu4kZjE1SLbb6"/>
+<div class="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-full"></div>
+</div>
+<h2 class="font-headline-md text-headline-md-mobile md:text-headline-md text-primary">Dr. Alex Vance</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Neurology Resident</p>
+<div class="mt-sm flex gap-xs flex-wrap justify-center">
+<span class="bg-secondary-container/20 text-secondary border border-secondary/30 px-3 py-1 rounded-full font-label-sm text-label-sm">Level 42</span>
+<span class="bg-primary-container/20 text-primary border border-primary/30 px-3 py-1 rounded-full font-label-sm text-label-sm">Synapse Elite</span>
+</div>
+</div>
+<!-- Streak -->
+<div class="glass-panel rounded-xl p-md flex flex-col items-center justify-center md:col-span-2 relative overflow-hidden group">
+<div class="absolute inset-0 bg-tertiary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="glow-emerald w-32 h-32 rounded-full flex items-center justify-center mb-sm relative">
+<svg class="absolute inset-0 w-full h-full -rotate-90" viewbox="0 0 100 100">
+<circle cx="50" cy="50" fill="none" r="45" stroke="rgba(255,255,255,0.05)" stroke-width="4"></circle>
+<circle class="text-tertiary drop-shadow-[0_0_10px_rgba(74,225,118,0.5)]" cx="50" cy="50" fill="none" r="45" stroke="currentColor" stroke-dasharray="283" stroke-dashoffset="40" stroke-width="4"></circle>
+</svg>
+<span class="material-symbols-outlined text-4xl text-tertiary" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+</div>
+<h3 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-tertiary">124 Days</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant tracking-widest uppercase mt-xs">Active Streak</p>
+</div>
+</div>
+<!-- Mastery Metrics Bento -->
+<div>
+<h3 class="font-headline-md text-headline-md-mobile md:text-headline-md text-on-surface mb-md">Mastery Overview</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-sm md:gap-md">
+<div class="glass-panel p-sm md:p-md rounded-lg flex flex-col">
+<span class="material-symbols-outlined text-primary mb-2">library_add_check</span>
+<span class="font-display-lg-mobile text-display-lg-mobile text-on-surface">4,208</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1">Cards Mastered</span>
+</div>
+<div class="glass-panel p-sm md:p-md rounded-lg flex flex-col">
+<span class="material-symbols-outlined text-secondary mb-2">radar</span>
+<span class="font-display-lg-mobile text-display-lg-mobile text-on-surface">94%</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1">Global Accuracy</span>
+</div>
+<div class="glass-panel p-sm md:p-md rounded-lg flex flex-col">
+<span class="material-symbols-outlined text-tertiary mb-2">history</span>
+<span class="font-display-lg-mobile text-display-lg-mobile text-on-surface">12.5k</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1">Total Reviews</span>
+</div>
+<div class="glass-panel p-sm md:p-md rounded-lg flex flex-col">
+<span class="material-symbols-outlined text-primary mb-2">timer</span>
+<span class="font-display-lg-mobile text-display-lg-mobile text-on-surface">148h</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1">Time in Nexus</span>
+</div>
+</div>
+</div>
+<!-- Leitner Flux -->
+<div>
+<h3 class="font-headline-md text-headline-md-mobile md:text-headline-md text-on-surface mb-md">Leitner Flux (Today)</h3>
+<div class="glass-panel rounded-xl p-md">
+<div class="flex flex-col md:flex-row justify-between items-center gap-md">
+<!-- Box 1 -->
+<div class="flex-1 w-full text-center p-sm border border-white/5 rounded-lg bg-surface/30">
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1">Learning</p>
+<p class="font-body-lg text-body-lg text-error">42</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant/50 hidden md:block">arrow_forward</span>
+<span class="material-symbols-outlined text-on-surface-variant/50 md:hidden rotate-90">arrow_forward</span>
+<!-- Box 2 -->
+<div class="flex-1 w-full text-center p-sm border border-white/5 rounded-lg bg-surface/30 relative">
+<div class="absolute -top-2 -right-2 bg-primary/20 text-primary text-xs rounded-full px-2 py-0.5 border border-primary/30">+15</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1">Reviewing</p>
+<p class="font-body-lg text-body-lg text-primary">156</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant/50 hidden md:block">arrow_forward</span>
+<span class="material-symbols-outlined text-on-surface-variant/50 md:hidden rotate-90">arrow_forward</span>
+<!-- Box 3 -->
+<div class="flex-1 w-full text-center p-sm border border-white/5 rounded-lg bg-surface/30 relative shadow-[0_0_20px_rgba(74,225,118,0.1)]">
+<div class="absolute -top-2 -right-2 bg-tertiary/20 text-tertiary text-xs rounded-full px-2 py-0.5 border border-tertiary/30">+89</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1">Mastered</p>
+<p class="font-body-lg text-body-lg text-tertiary">2,010</p>
+</div>
+</div>
+<div class="mt-sm text-center">
+<p class="font-body-md text-body-md text-on-surface-variant/70 text-sm">Net positive migration today. Keep pushing the boundaries of retention.</p>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden bg-surface-container/70 backdrop-blur-[24px] fixed bottom-0 w-full z-50 rounded-t-xl border-t border-white/10 shadow-[0_-10px_30px_rgba(0,0,0,0.5)] flex justify-around items-center h-20 pb-safe px-4">
+<button class="flex flex-col items-center justify-center text-on-surface-variant/60 hover:text-primary/80 transition-all active:scale-90 duration-150 w-16">
+<span class="material-symbols-outlined mb-1">menu_book</span>
+<span class="font-label-sm text-label-sm">Syllabus</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant/60 hover:text-primary/80 transition-all active:scale-90 duration-150 w-16">
+<span class="material-symbols-outlined mb-1">sports_esports</span>
+<span class="font-label-sm text-label-sm">Arena</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant/60 hover:text-primary/80 transition-all active:scale-90 duration-150 w-16">
+<span class="material-symbols-outlined mb-1">workspace_premium</span>
+<span class="font-label-sm text-label-sm">Mastery</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-primary-container/20 text-primary rounded-full px-4 py-1 shadow-[0_0_20px_rgba(128,131,255,0.2)] hover:text-primary/80 transition-all active:scale-90 duration-150 w-20">
+<span class="material-symbols-outlined mb-1">inventory_2</span>
+<span class="font-label-sm text-label-sm">Vault</span>
+</button>
+</nav>
+</body></html>

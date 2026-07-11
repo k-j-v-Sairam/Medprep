@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Create Card Modal - Neuro-Nexus</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#e1e0ff",
+                        "primary": "#c0c1ff",
+                        "on-error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#005048",
+                        "secondary-fixed-dim": "#4fdbc8",
+                        "on-tertiary": "#003915",
+                        "tertiary-fixed": "#6bff8f",
+                        "secondary-container": "#04b4a2",
+                        "surface-container-highest": "#34343d",
+                        "tertiary-container": "#00a74b",
+                        "background": "#13131b",
+                        "on-background": "#e4e1ed",
+                        "on-tertiary-fixed": "#002109",
+                        "on-tertiary-container": "#003111",
+                        "on-secondary-container": "#003f38",
+                        "surface-container-lowest": "#0d0d15",
+                        "surface-container-high": "#292932",
+                        "tertiary": "#4ae176",
+                        "error": "#ffb4ab",
+                        "primary-fixed-dim": "#c0c1ff",
+                        "outline": "#908fa0",
+                        "on-primary": "#1000a9",
+                        "inverse-surface": "#e4e1ed",
+                        "on-primary-container": "#0d0096",
+                        "surface-container-low": "#1b1b23",
+                        "inverse-primary": "#494bd6",
+                        "on-surface": "#e4e1ed",
+                        "inverse-on-surface": "#303038",
+                        "error-container": "#93000a",
+                        "primary-container": "#8083ff",
+                        "outline-variant": "#464554",
+                        "surface-bright": "#393841",
+                        "tertiary-fixed-dim": "#4ae176",
+                        "surface-container": "#1f1f27",
+                        "on-tertiary-fixed-variant": "#005321",
+                        "on-secondary": "#003731",
+                        "on-primary-fixed": "#07006c",
+                        "secondary-fixed": "#71f8e4",
+                        "surface-dim": "#13131b",
+                        "surface-variant": "#34343d",
+                        "on-secondary-fixed": "#00201c",
+                        "on-error": "#690005",
+                        "secondary": "#4fdbc8",
+                        "surface-tint": "#c0c1ff",
+                        "on-surface-variant": "#c7c4d7",
+                        "on-primary-fixed-variant": "#2f2ebe",
+                        "surface": "#13131b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px",
+                        "sheet": "28px"
+                    },
+                    "spacing": {
+                        "md": "24px",
+                        "sm": "12px",
+                        "margin-mobile": "16px",
+                        "lg": "40px",
+                        "base": "8px",
+                        "xl": "64px",
+                        "margin-desktop": "48px",
+                        "gutter": "20px",
+                        "xs": "4px"
+                    },
+                    "fontFamily": {
+                        "display-lg-mobile": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "label-sm": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-effect {
+            backdrop-filter: blur(24px) saturate(180%);
+            -webkit-backdrop-filter: blur(24px) saturate(180%);
+        }
+        .glass-border {
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+        }
+        .glow-active {
+            box-shadow: 0 0 30px rgba(99, 102, 241, 0.15);
+        }
+        .glow-focus:focus-within {
+            box-shadow: 0 0 30px rgba(99, 102, 241, 0.3);
+            border-color: rgba(192, 193, 255, 0.5);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen font-body-md overflow-hidden antialiased">
+<!-- Background Context: Syllabus Dashboard -->
+<div class="fixed inset-0 z-0 opacity-40 select-none">
+<!-- TopAppBar Placeholder (Hidden on modal view but present for context) -->
+<header class="fixed top-0 w-full z-10 flex items-center justify-between px-margin-mobile md:px-margin-desktop h-16 border-b border-white/10">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-2xl">psychology</span>
+<span class="font-display-lg-mobile text-display-lg-mobile text-primary tracking-tight">Neuro-Nexus</span>
+</div>
+</header>
+<!-- Dashboard Content Grid -->
+<div class="pt-24 px-margin-mobile md:px-margin-desktop grid grid-cols-4 md:grid-cols-12 gap-gutter h-full pb-32">
+<div class="col-span-4 md:col-span-4 h-48 bg-surface-container rounded-xl glass-border glass-effect"></div>
+<div class="col-span-4 md:col-span-8 h-48 bg-surface-container rounded-xl glass-border glass-effect"></div>
+<div class="col-span-4 md:col-span-12 h-64 bg-surface-container rounded-xl glass-border glass-effect"></div>
+</div>
+</div>
+<!-- Modal Overlay Backdrop -->
+<div class="fixed inset-0 bg-background/80 glass-effect z-40 transition-opacity duration-300"></div>
+<!-- Bottom Sheet Modal -->
+<div class="fixed inset-x-0 bottom-0 z-50 transform transition-transform duration-300 ease-out flex justify-center">
+<!-- Modal Container: Full width on mobile, max-width on desktop -->
+<div class="w-full md:max-w-2xl bg-surface-container-highest/90 glass-effect rounded-t-sheet glass-border flex flex-col shadow-[0_-20px_40px_rgba(0,0,0,0.5)] border-t border-white/20">
+<!-- Drag Handle -->
+<div class="w-full flex justify-center pt-sm pb-2">
+<div class="w-12 h-1.5 bg-outline-variant rounded-full opacity-50"></div>
+</div>
+<!-- Header -->
+<div class="flex items-center justify-between px-md pb-md">
+<h2 class="font-headline-md text-headline-md text-on-surface">Create Card</h2>
+<button class="p-2 rounded-full hover:bg-white/5 transition-colors text-on-surface-variant group">
+<span class="material-symbols-outlined text-[24px] group-hover:text-primary transition-colors">close</span>
+</button>
+</div>
+<!-- Form Content -->
+<div class="px-md pb-xl flex flex-col gap-lg overflow-y-auto max-h-[663px]">
+<!-- Topic Selection -->
+<div class="flex flex-col gap-sm">
+<label class="text-[10px] uppercase tracking-widest text-secondary font-semibold">Subject / Topic</label>
+<div class="flex flex-wrap gap-2">
+<button class="px-4 py-2 rounded-full bg-secondary-container/20 text-secondary border border-secondary/30 font-label-sm text-label-sm hover:bg-secondary-container/30 transition-colors glow-active">Neurology</button>
+<button class="px-4 py-2 rounded-full bg-surface-container-low text-on-surface-variant border border-white/10 font-label-sm text-label-sm hover:bg-white/5 transition-colors">Pharmacology</button>
+<button class="px-4 py-2 rounded-full bg-surface-container-low text-on-surface-variant border border-white/10 font-label-sm text-label-sm hover:bg-white/5 transition-colors">Anatomy</button>
+<button class="p-2 rounded-full bg-surface-container-low text-on-surface-variant border border-white/10 hover:bg-white/5 transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+</div>
+<!-- Question Input -->
+<div class="flex flex-col gap-sm">
+<label class="text-[10px] uppercase tracking-widest text-secondary font-semibold">Question</label>
+<div class="relative rounded-lg bg-surface-container-lowest glass-border glow-focus transition-all duration-300">
+<textarea class="w-full bg-transparent border-none text-on-surface font-body-md text-body-md p-4 placeholder-on-surface-variant/50 focus:ring-0 resize-none rounded-lg" placeholder="Enter the primary question or prompt..." rows="3"></textarea>
+</div>
+</div>
+<!-- Answer Input -->
+<div class="flex flex-col gap-sm">
+<label class="text-[10px] uppercase tracking-widest text-secondary font-semibold">Answer</label>
+<div class="relative rounded-lg bg-surface-container-lowest glass-border glow-focus transition-all duration-300">
+<textarea class="w-full bg-transparent border-none text-on-surface font-body-md text-body-md p-4 placeholder-on-surface-variant/50 focus:ring-0 resize-none rounded-lg" placeholder="Enter the detailed answer or explanation..." rows="4"></textarea>
+</div>
+</div>
+<!-- Action Button -->
+<button class="w-full py-4 mt-2 rounded-lg bg-gradient-to-r from-primary to-secondary text-surface-container-lowest font-label-sm text-label-sm shadow-[0_0_40px_rgba(192,193,255,0.4)] hover:shadow-[0_0_50px_rgba(192,193,255,0.6)] transform hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200">
+                    CREATE CARD
+                </button>
+</div>
+</div>
+</div>
+<!-- BottomNavBar (Hidden by modal backdrop, structure maintained for logic) -->
+<!-- Suppressed due to modal overlay context -->
+</body></html>

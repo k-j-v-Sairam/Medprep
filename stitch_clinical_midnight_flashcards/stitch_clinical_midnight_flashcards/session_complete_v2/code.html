@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Neuro-Nexus - Session Complete</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary-fixed": "#e1e0ff",
+                      "primary": "#c0c1ff",
+                      "on-error-container": "#ffdad6",
+                      "on-secondary-fixed-variant": "#005048",
+                      "secondary-fixed-dim": "#4fdbc8",
+                      "on-tertiary": "#003915",
+                      "tertiary-fixed": "#6bff8f",
+                      "secondary-container": "#04b4a2",
+                      "surface-container-highest": "#34343d",
+                      "tertiary-container": "#00a74b",
+                      "background": "#13131b",
+                      "on-background": "#e4e1ed",
+                      "on-tertiary-fixed": "#002109",
+                      "on-tertiary-container": "#003111",
+                      "on-secondary-container": "#003f38",
+                      "surface-container-lowest": "#0d0d15",
+                      "surface-container-high": "#292932",
+                      "tertiary": "#4ae176",
+                      "error": "#ffb4ab",
+                      "primary-fixed-dim": "#c0c1ff",
+                      "outline": "#908fa0",
+                      "on-primary": "#1000a9",
+                      "inverse-surface": "#e4e1ed",
+                      "on-primary-container": "#0d0096",
+                      "surface-container-low": "#1b1b23",
+                      "inverse-primary": "#494bd6",
+                      "on-surface": "#e4e1ed",
+                      "inverse-on-surface": "#303038",
+                      "error-container": "#93000a",
+                      "primary-container": "#8083ff",
+                      "outline-variant": "#464554",
+                      "surface-bright": "#393841",
+                      "tertiary-fixed-dim": "#4ae176",
+                      "surface-container": "#1f1f27",
+                      "on-tertiary-fixed-variant": "#005321",
+                      "on-secondary": "#003731",
+                      "on-primary-fixed": "#07006c",
+                      "secondary-fixed": "#71f8e4",
+                      "surface-dim": "#13131b",
+                      "surface-variant": "#34343d",
+                      "on-secondary-fixed": "#00201c",
+                      "on-error": "#690005",
+                      "secondary": "#4fdbc8",
+                      "surface-tint": "#c0c1ff",
+                      "on-surface-variant": "#c7c4d7",
+                      "on-primary-fixed-variant": "#2f2ebe",
+                      "surface": "#13131b"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "md": "24px",
+                      "sm": "12px",
+                      "margin-mobile": "16px",
+                      "lg": "40px",
+                      "base": "8px",
+                      "xl": "64px",
+                      "margin-desktop": "48px",
+                      "gutter": "20px",
+                      "xs": "4px"
+              },
+              "fontFamily": {
+                      "display-lg-mobile": ["Plus Jakarta Sans"],
+                      "display-lg": ["Plus Jakarta Sans"],
+                      "body-md": ["Inter"],
+                      "headline-md": ["Plus Jakarta Sans"],
+                      "label-sm": ["Inter"],
+                      "body-lg": ["Inter"]
+              },
+              "fontSize": {
+                      "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(31, 31, 39, 0.4);
+            backdrop-filter: blur(24px) saturate(180%);
+            -webkit-backdrop-filter: blur(24px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+        }
+        
+        .glow-primary {
+            box-shadow: 0 0 30px rgba(192, 193, 255, 0.15);
+        }
+        
+        .text-glow {
+            text-shadow: 0 0 15px rgba(192, 193, 255, 0.4);
+        }
+
+        /* Checkmark Animation */
+        @keyframes drawCheck {
+            0% { stroke-dashoffset: 100; }
+            100% { stroke-dashoffset: 0; }
+        }
+        
+        @keyframes scaleUp {
+            0% { transform: scale(0.8); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .animated-check {
+            stroke-dasharray: 100;
+            stroke-dashoffset: 100;
+            animation: drawCheck 1s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+            animation-delay: 0.3s;
+        }
+        
+        .pop-in {
+            opacity: 0;
+            animation: scaleUp 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.3s; }
+        .delay-3 { animation-delay: 0.5s; }
+        .delay-4 { animation-delay: 0.7s; }
+
+        body {
+            background: radial-gradient(circle at 50% -20%, rgba(128, 131, 255, 0.15), transparent 60%), #13131b;
+            min-height: 100vh;
+        }
+        
+        .pb-safe { padding-bottom: env(safe-area-inset-bottom, 20px); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background antialiased flex flex-col min-h-screen relative overflow-x-hidden pb-24">
+<!-- Top App Bar (Hidden on Mobile, Visible Desktop) -->
+<header class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-3xl border-b border-white/10 shadow-xl hidden md:flex items-center justify-between px-margin-desktop h-16">
+<div class="flex items-center gap-sm cursor-pointer hover:bg-white/5 transition-colors p-sm rounded-lg active:scale-95 duration-200">
+<span class="material-symbols-outlined text-primary" data-weight="fill" style="font-variation-settings: 'FILL' 1;">psychology</span>
+<span class="font-display-lg text-display-lg text-primary tracking-tight shadow-primary/20 drop-shadow-[0_0_15px_rgba(192,193,255,0.4)]">Neuro-Nexus</span>
+</div>
+<!-- Desktop Nav Items -->
+<nav class="flex gap-md h-full items-center">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary/80 transition-all active:scale-95 duration-200 flex items-center gap-xs px-sm py-xs rounded-full" href="#">
+<span class="material-symbols-outlined text-lg">menu_book</span> Syllabus
+            </a>
+<a class="font-label-sm text-label-sm text-primary bg-primary-container/20 rounded-full px-4 py-1 shadow-[0_0_20px_rgba(128,131,255,0.2)] flex items-center gap-xs transition-all active:scale-95 duration-200" href="#">
+<span class="material-symbols-outlined text-lg">sports_esports</span> Arena
+            </a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary/80 transition-all active:scale-95 duration-200 flex items-center gap-xs px-sm py-xs rounded-full" href="#">
+<span class="material-symbols-outlined text-lg">workspace_premium</span> Mastery
+            </a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary/80 transition-all active:scale-95 duration-200 flex items-center gap-xs px-sm py-xs rounded-full" href="#">
+<span class="material-symbols-outlined text-lg">inventory_2</span> Vault
+            </a>
+</nav>
+<div class="flex items-center gap-sm">
+<button class="text-primary hover:bg-white/5 p-sm rounded-full transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+</header>
+<!-- Top App Bar (Mobile) -->
+<header class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-3xl border-b border-white/10 shadow-xl flex md:hidden items-center justify-between px-margin-mobile h-16">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary" data-weight="fill" style="font-variation-settings: 'FILL' 1;">psychology</span>
+<span class="font-display-lg-mobile text-display-lg-mobile text-primary tracking-tight shadow-primary/20 drop-shadow-[0_0_15px_rgba(192,193,255,0.4)]">Neuro-Nexus</span>
+</div>
+<button class="text-primary hover:bg-white/5 p-xs rounded-full transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex flex-col items-center justify-center pt-24 pb-safe px-margin-mobile md:px-margin-desktop w-full max-w-4xl mx-auto relative z-10">
+<!-- Background Decorative Elements -->
+<div class="absolute inset-0 pointer-events-none overflow-hidden z-0 flex items-center justify-center">
+<div class="w-[300px] h-[300px] bg-primary/10 rounded-full blur-[80px] absolute mix-blend-screen"></div>
+<div class="w-[200px] h-[200px] bg-secondary/10 rounded-full blur-[60px] absolute -translate-x-32 translate-y-32 mix-blend-screen"></div>
+</div>
+<div class="z-10 w-full flex flex-col items-center gap-lg">
+<!-- Celebration Header -->
+<div class="flex flex-col items-center gap-sm text-center pop-in delay-1">
+<div class="w-32 h-32 rounded-full glass-panel flex items-center justify-center mb-sm relative glow-primary">
+<div class="absolute inset-0 rounded-full bg-primary/20 animate-pulse"></div>
+<svg class="w-20 h-20 text-primary z-10" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" viewbox="0 0 50 50">
+<path class="animated-check" d="M14 27 L22 35 L38 17"></path>
+</svg>
+</div>
+<h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-primary text-glow">Session Complete!</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">You reviewed 50 cards</p>
+</div>
+<!-- Stats Grid (Bento Style) -->
+<div class="grid grid-cols-2 gap-sm md:gap-md w-full max-w-lg pop-in delay-2">
+<!-- Correct -->
+<div class="glass-panel p-md rounded-xl flex flex-col gap-xs relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-16 h-16 bg-tertiary/10 rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-150 duration-500"></div>
+<span class="material-symbols-outlined text-tertiary">check_circle</span>
+<span class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-on-surface">42</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Correct</span>
+</div>
+<!-- Again -->
+<div class="glass-panel p-md rounded-xl flex flex-col gap-xs relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-16 h-16 bg-error/10 rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-150 duration-500"></div>
+<span class="material-symbols-outlined text-error">replay</span>
+<span class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-on-surface">8</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Again</span>
+</div>
+<!-- Time -->
+<div class="glass-panel p-md rounded-xl flex flex-col gap-xs relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-16 h-16 bg-secondary/10 rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-150 duration-500"></div>
+<span class="material-symbols-outlined text-secondary">timer</span>
+<span class="font-headline-md text-headline-md-mobile md:font-headline-md md:text-headline-md text-on-surface mt-auto">14:32</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Time</span>
+</div>
+<!-- Streak -->
+<div class="glass-panel p-md rounded-xl flex flex-col gap-xs relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-16 h-16 bg-[rgba(245,158,11,0.2)] rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-150 duration-500"></div>
+<span class="material-symbols-outlined text-[rgba(245,158,11,1)]">local_fire_department</span>
+<span class="font-headline-md text-headline-md-mobile md:font-headline-md md:text-headline-md text-on-surface mt-auto">12 Days</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Streak</span>
+</div>
+</div>
+<!-- XP Pill -->
+<div class="glass-panel rounded-full px-lg py-sm flex items-center gap-md pop-in delay-3 w-full max-w-md relative overflow-hidden">
+<div class="flex flex-col gap-xs z-10 w-full">
+<div class="flex justify-between items-center w-full">
+<span class="font-label-sm text-label-sm text-primary uppercase flex items-center gap-xs">
+<span class="material-symbols-outlined text-sm">stars</span> XP Gained
+                        </span>
+<span class="font-headline-md text-headline-md-mobile md:font-headline-md md:text-headline-md text-on-surface">+240</span>
+</div>
+<!-- Progress Bar -->
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full w-3/4 relative">
+<div class="absolute top-0 right-0 bottom-0 w-8 bg-gradient-to-r from-transparent to-white/50"></div>
+</div>
+</div>
+<div class="flex justify-between w-full font-label-sm text-label-sm text-on-surface-variant/60 text-[10px]">
+<span>Level 14</span>
+<span>Level 15</span>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex flex-col gap-sm w-full max-w-sm pop-in delay-4 mt-sm">
+<button class="w-full bg-gradient-to-r from-primary to-inverse-primary text-on-primary font-headline-md text-headline-md-mobile md:font-headline-md md:text-headline-md py-sm rounded-lg glow-primary hover:brightness-110 active:scale-95 transition-all duration-200">
+                    Continue Studying
+                </button>
+<button class="w-full glass-panel text-on-surface font-body-md text-body-md py-sm rounded-lg hover:bg-white/5 active:scale-95 transition-all duration-200">
+                    Back to Syllabus
+                </button>
+</div>
+</div>
+</main>
+<!-- Bottom Nav Bar (Mobile Only) -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-xl bg-surface-container/70 backdrop-blur-[24px] border-t border-white/10 shadow-[0_-10px_30px_rgba(0,0,0,0.5)] flex md:hidden justify-around items-center h-20 pb-safe px-4">
+<a class="flex flex-col items-center justify-center text-on-surface-variant/60 hover:text-primary/80 transition-all active:scale-90 duration-150 gap-xs" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="font-label-sm text-label-sm">Syllabus</span>
+</a>
+<!-- Active Tab: Arena -->
+<a class="flex flex-col items-center justify-center bg-primary-container/20 text-primary rounded-full px-4 py-1 shadow-[0_0_20px_rgba(128,131,255,0.2)] hover:text-primary/80 transition-all active:scale-90 duration-150 gap-xs" href="#">
+<span class="material-symbols-outlined" data-weight="fill" style="font-variation-settings: 'FILL' 1;">sports_esports</span>
+<span class="font-label-sm text-label-sm">Arena</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/60 hover:text-primary/80 transition-all active:scale-90 duration-150 gap-xs" href="#">
+<span class="material-symbols-outlined">workspace_premium</span>
+<span class="font-label-sm text-label-sm">Mastery</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/60 hover:text-primary/80 transition-all active:scale-90 duration-150 gap-xs" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-label-sm text-label-sm">Vault</span>
+</a>
+</nav>
+</body></html>

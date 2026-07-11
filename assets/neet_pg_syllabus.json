@@ -1,0 +1,118 @@
+{
+  "subjects": [
+    {"id": 1, "name": "Anatomy", "slug": "anatomy", "colorCode": "0xFF4AE176"},
+    {"id": 2, "name": "Physiology", "slug": "physiology", "colorCode": "0xFFFF8A65"},
+    {"id": 3, "name": "Biochemistry", "slug": "biochemistry", "colorCode": "0xFF8083FF"},
+    {"id": 4, "name": "Pathology", "slug": "pathology", "colorCode": "0xFFFFDAD6"},
+    {"id": 5, "name": "Pharmacology", "slug": "pharmacology", "colorCode": "0xFF4FDBC8"},
+    {"id": 6, "name": "Microbiology", "slug": "microbiology", "colorCode": "0xFFDCE775"},
+    {"id": 7, "name": "Forensic Medicine", "slug": "forensic_medicine", "colorCode": "0xFF90A4AE"},
+    {"id": 8, "name": "PSM", "slug": "social_&_preventive_medicine", "colorCode": "0xFF81C784"},
+    {"id": 9, "name": "Medicine", "slug": "medicine", "colorCode": "0xFF64B5F6"},
+    {"id": 10, "name": "Surgery", "slug": "surgery", "colorCode": "0xFFE57373"},
+    {"id": 11, "name": "OBG", "slug": "gynaecology_&_obstetrics", "colorCode": "0xFFF06292"},
+    {"id": 12, "name": "Pediatrics", "slug": "pediatrics", "colorCode": "0xFFFFD54F"},
+    {"id": 13, "name": "Ophthalmology", "slug": "ophthalmology", "colorCode": "0xFF4DB6AC"},
+    {"id": 14, "name": "ENT", "slug": "ent", "colorCode": "0xFF9575CD"},
+    {"id": 15, "name": "Orthopedics", "slug": "orthopaedics", "colorCode": "0xFFBCAAA4"},
+    {"id": 16, "name": "Psychiatry", "slug": "psychiatry", "colorCode": "0xFFC0C1FF"},
+    {"id": 17, "name": "Dermatology", "slug": "skin", "colorCode": "0xFFFFB74D"},
+    {"id": 18, "name": "Anesthesiology", "slug": "anaesthesia", "colorCode": "0xFF7986CB"},
+    {"id": 19, "name": "Radiology", "slug": "radiology", "colorCode": "0xFF4DD0E1"}
+  ],
+  "topics": [
+    {"id": 1, "subjectId": 1, "name": "Gross Anatomy", "description": "Upper Limb, Lower Limb, Thorax, Abdomen, Pelvis, Head & Neck"},
+    {"id": 2, "subjectId": 1, "name": "Neuroanatomy", "description": "Brainstem, Cerebellum, Cerebrum, Spinal Cord, Cranial Nerves"},
+    {"id": 3, "subjectId": 1, "name": "Embryology", "description": "General and Systemic Development"},
+    {"id": 4, "subjectId": 1, "name": "Histology", "description": "Basic Tissues and Systemic Histology"},
+    
+    {"id": 5, "subjectId": 2, "name": "General Physiology", "description": "Cell Membrane, Transport, Homeostasis"},
+    {"id": 6, "subjectId": 2, "name": "Nerve & Muscle Physiology", "description": "Action Potentials, Muscle Contraction"},
+    {"id": 7, "subjectId": 2, "name": "Blood (Hematology)", "description": "RBCs, WBCs, Platelets, Hemostasis"},
+    {"id": 8, "subjectId": 2, "name": "Cardiovascular System", "description": "Cardiac Cycle, ECG, Blood Pressure"},
+    {"id": 9, "subjectId": 2, "name": "Respiratory System", "description": "Mechanics, Lung Volumes, Gas Exchange"},
+    {"id": 10, "subjectId": 2, "name": "Gastrointestinal Tract", "description": "Secretions, Motility, Digestion"},
+    {"id": 11, "subjectId": 2, "name": "Renal Physiology", "description": "GFR, Acid-Base Balance, Micturition"},
+    {"id": 12, "subjectId": 2, "name": "Central Nervous System", "description": "Sensory/Motor Pathways, Reflexes, Special Senses"},
+    {"id": 13, "subjectId": 2, "name": "Endocrinology & Reproduction", "description": "Hormones, Menstrual Cycle, Pregnancy"},
+    
+    {"id": 14, "subjectId": 3, "name": "Carbohydrate Metabolism", "description": "Glycolysis, Gluconeogenesis, TCA Cycle"},
+    {"id": 15, "subjectId": 3, "name": "Lipid Metabolism", "description": "Fatty Acid Oxidation, Cholesterol"},
+    {"id": 16, "subjectId": 3, "name": "Protein Metabolism", "description": "Urea Cycle, Amino Acids"},
+    {"id": 17, "subjectId": 3, "name": "Enzymology", "description": "Kinetics, Inhibition"},
+    {"id": 18, "subjectId": 3, "name": "Vitamins & Minerals", "description": "Deficiencies and Toxicities"},
+    {"id": 19, "subjectId": 3, "name": "Molecular Biology & Genetics", "description": "Replication, Transcription, Translation, PCR"},
+    
+    {"id": 20, "subjectId": 4, "name": "General Pathology", "description": "Cell Injury, Inflammation, Neoplasia"},
+    {"id": 21, "subjectId": 4, "name": "Hematology", "description": "Anemias, Leukemias, Lymphomas"},
+    {"id": 22, "subjectId": 4, "name": "Systemic Pathology", "description": "CVS, RS, GIT, Renal, CNS Pathology"},
+    {"id": 23, "subjectId": 4, "name": "Clinical Pathology", "description": "Urine Analysis, FNAC, Cytology"},
+    
+    {"id": 24, "subjectId": 5, "name": "General Pharmacology", "description": "Pharmacokinetics, Pharmacodynamics"},
+    {"id": 25, "subjectId": 5, "name": "Autonomic Nervous System", "description": "Cholinergic, Adrenergic Drugs"},
+    {"id": 26, "subjectId": 5, "name": "Cardiovascular Drugs", "description": "Antihypertensives, Antianginals"},
+    {"id": 27, "subjectId": 5, "name": "Central Nervous System", "description": "Antiepileptics, Antidepressants, Opioids"},
+    {"id": 28, "subjectId": 5, "name": "Endocrine Pharmacology", "description": "Antidiabetics, Corticosteroids"},
+    {"id": 29, "subjectId": 5, "name": "Antimicrobial & Chemotherapy", "description": "Antibiotics, Antivirals, Anticancer"},
+    
+    {"id": 30, "subjectId": 6, "name": "General Microbiology & Immunology", "description": "Sterilization, Antigens, Antibodies, Hypersensitivity"},
+    {"id": 31, "subjectId": 6, "name": "Bacteriology", "description": "Gram Positive/Negative, Mycobacteria"},
+    {"id": 32, "subjectId": 6, "name": "Virology", "description": "DNA and RNA Viruses, HIV, Hepatitis"},
+    {"id": 33, "subjectId": 6, "name": "Parasitology & Mycology", "description": "Protozoa, Helminths, Fungal Infections"},
+    
+    {"id": 34, "subjectId": 7, "name": "Medical Jurisprudence & Autopsy", "description": "Legal Procedures, Time Since Death"},
+    {"id": 35, "subjectId": 7, "name": "Traumatology & Asphyxia", "description": "Injuries, Wounds, Hanging, Drowning"},
+    {"id": 36, "subjectId": 7, "name": "Toxicology", "description": "Corrosives, Plant/Animal Neurotoxins, Heavy Metals"},
+    
+    {"id": 37, "subjectId": 8, "name": "Epidemiology & Biostatistics", "description": "Study Designs, Tests of Significance"},
+    {"id": 38, "subjectId": 8, "name": "Communicable & Non-Communicable Diseases", "description": "Screening and Prevention"},
+    {"id": 39, "subjectId": 8, "name": "National Health Programs", "description": "TB, Malaria, Maternal & Child Health, Immunization"},
+    {"id": 40, "subjectId": 8, "name": "Nutrition & Demography", "description": "Deficiencies, Population Trends"},
+    
+    {"id": 41, "subjectId": 9, "name": "Cardiology", "description": "Heart Failure, Ischemic Heart Disease, Arrhythmias"},
+    {"id": 42, "subjectId": 9, "name": "Neurology", "description": "Stroke, Seizures, Demyelinating Diseases"},
+    {"id": 43, "subjectId": 9, "name": "Respiratory Medicine", "description": "Asthma, COPD, ILD, Tuberculosis"},
+    {"id": 44, "subjectId": 9, "name": "Gastroenterology & Hepatology", "description": "Peptic Ulcer, Hepatitis, Cirrhosis"},
+    {"id": 45, "subjectId": 9, "name": "Nephrology", "description": "AKI, CKD, Glomerulonephritis"},
+    {"id": 46, "subjectId": 9, "name": "Endocrinology", "description": "Diabetes, Thyroid, Pituitary Disorders"},
+    {"id": 47, "subjectId": 9, "name": "Rheumatology & Infectious Diseases", "description": "RA, SLE, HIV, Malaria, Dengue"},
+    
+    {"id": 48, "subjectId": 10, "name": "Basic Surgery & Trauma", "description": "Wound Healing, Shock, ATLS Protocols"},
+    {"id": 49, "subjectId": 10, "name": "Oncology & Endocrine Surgery", "description": "Thyroid, Breast, Surgical Oncology Principles"},
+    {"id": 50, "subjectId": 10, "name": "Gastrointestinal Surgery", "description": "Esophagus, Stomach, Intestines, Hernias"},
+    {"id": 51, "subjectId": 10, "name": "Urology", "description": "Kidney, Prostate, Bladder (Stones/Tumors)"},
+    
+    {"id": 52, "subjectId": 11, "name": "Normal Pregnancy & Labor", "description": "Antenatal Care, Physiological Changes, Puerperium"},
+    {"id": 53, "subjectId": 11, "name": "Complicated Pregnancy", "description": "Preeclampsia, Gestational Diabetes, APH"},
+    {"id": 54, "subjectId": 11, "name": "Gynaecological Oncology", "description": "Cervical, Uterine, Ovarian Cancers"},
+    {"id": 55, "subjectId": 11, "name": "Menstrual Disorders & Infertility", "description": "PCOS, DUB, Contraception"},
+    
+    {"id": 56, "subjectId": 12, "name": "Growth, Development & Nutrition", "description": "Milestones, Anthropometry, SAM"},
+    {"id": 57, "subjectId": 12, "name": "Neonatology", "description": "Prematurity, Resuscitation, RDS"},
+    {"id": 58, "subjectId": 12, "name": "Systemic Pediatrics", "description": "Congenital Heart Diseases, Nephrotic Syndrome"},
+    
+    {"id": 59, "subjectId": 13, "name": "Anatomy, Optics & Refraction", "description": "Myopia, Astigmatism, Presbyopia"},
+    {"id": 60, "subjectId": 13, "name": "Anterior Segment", "description": "Conjunctivitis, Corneal Ulcers, Cataract, Glaucoma"},
+    {"id": 61, "subjectId": 13, "name": "Posterior Segment & Neuro-ophthalmology", "description": "Diabetic Retinopathy, Retinal Detachment, Strabismus"},
+    
+    {"id": 62, "subjectId": 14, "name": "Ear", "description": "Audiology, ASOM, CSOM, Deafness"},
+    {"id": 63, "subjectId": 14, "name": "Nose & Paranasal Sinuses", "description": "Rhinitis, Epistaxis, Tumors"},
+    {"id": 64, "subjectId": 14, "name": "Oral Cavity, Pharynx & Larynx", "description": "Tonsillitis, Laryngeal Malignancies"},
+    
+    {"id": 65, "subjectId": 15, "name": "Traumatology", "description": "Upper/Lower Limb Fractures, Spine, Pelvis"},
+    {"id": 66, "subjectId": 15, "name": "Infections & Tumors", "description": "Osteomyelitis, Bone Cancers"},
+    {"id": 67, "subjectId": 15, "name": "Metabolic & Regional Orthopedics", "description": "Osteoporosis, Arthritis, Sports Injuries"},
+    
+    {"id": 68, "subjectId": 16, "name": "Psychotic & Mood Disorders", "description": "Schizophrenia, Depression, Bipolar"},
+    {"id": 69, "subjectId": 16, "name": "Anxiety & Substance Abuse", "description": "OCD, Alcohol/Opioid Addiction"},
+    
+    {"id": 70, "subjectId": 17, "name": "Infections & Papulosquamous", "description": "Leprosy, Fungal, Psoriasis, Lichen Planus"},
+    {"id": 71, "subjectId": 17, "name": "Vesiculobullous & STDs", "description": "Pemphigus, Syphilis, Gonorrhea"},
+    
+    {"id": 72, "subjectId": 18, "name": "General & Regional Anesthesia", "description": "IV/Inhalational Agents, Spinal/Epidural"},
+    {"id": 73, "subjectId": 18, "name": "ICU & Resuscitation", "description": "CPR, Airway Management"},
+    
+    {"id": 74, "subjectId": 19, "name": "Diagnostic Imaging", "description": "X-Ray, CT, MRI, USG Principles"},
+    {"id": 75, "subjectId": 19, "name": "Systemic Radiology & Radiotherapy", "description": "Classic Radiological Signs, Isotopes"}
+  ]
+}

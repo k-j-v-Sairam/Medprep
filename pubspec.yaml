@@ -1,0 +1,63 @@
+name: akpa
+description: "A new Flutter project."
+publish_to: 'none'
+
+version: 1.0.0+1
+environment:
+  sdk: '>=3.2.5 <4.0.0'
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  http: ^1.2.0
+  isar_community: ^3.2.1
+  isar_community_flutter_libs: ^3.2.1
+  path_provider: ^2.1.4
+  flutter_riverpod: ^2.6.1
+  flutter_card_swiper: ^7.2.0
+  fl_chart: ^0.66.0
+  flutter_heatmap_calendar: ^1.0.5
+  flutter_markdown: ^0.6.20
+  google_fonts: ^6.3.3
+  firebase_core: ^2.27.0
+  firebase_auth: ^4.17.8
+  cloud_firestore: ^4.15.8
+  google_sign_in: ^6.2.1
+  shared_preferences: ^2.2.3
+  connectivity_plus: ^6.0.3
+  flutter_local_notifications: ^18.0.1
+  timezone: ^0.9.4
+  shimmer: ^3.0.0
+  intl: ^0.20.3
+  flutter_timezone: ^5.1.0
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+  build_runner: ^2.4.9
+  isar_community_generator: ^3.2.1
+  mockito: any
+  mocktail: any
+  fake_cloud_firestore: any
+  firebase_auth_mocks: any
+  flutter_launcher_icons: ^0.14.4
+  rename_app: ^1.6.6
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/neet_pg_syllabus.json
+    - assets/logo_new.png
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/logo_new.png"
+  web:
+    generate: true
+    image_path: "assets/logo_new.png"
+  windows:
+    generate: true
+    image_path: "assets/logo_new.png"
+  macos:
+    generate: true
+    image_path: "assets/logo_new.png"
