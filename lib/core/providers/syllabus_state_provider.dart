@@ -340,27 +340,39 @@ class SyllabusNotifier extends AsyncNotifier<SyllabusState> {
 
   Future<void> addTopic({
     required String topicName,
+    String? description,
+    int? subjectId,
   }) async {
     final isar = ref.read(isarProvider);
     
-    // Find or create 'Self Made' subject
-    var selfMadeSubject = await isar.subjects.filter().slugEqualTo('self_made').findFirst();
+    int targetSubjectId;
+    isar_model.Subject? targetSubject;
     bool newSubject = false;
-    if (selfMadeSubject == null) {
-      selfMadeSubject = isar_model.Subject()
-        ..name = 'Self Made'
-        ..slug = 'self_made'
-        ..colorCode = '0xFFBCAAA4';
-      await isar.writeTxn(() async {
-        await isar.subjects.put(selfMadeSubject!);
-      });
-      newSubject = true;
+
+    if (subjectId != null) {
+      targetSubjectId = subjectId;
+    } else {
+      // Find or create 'Self Made' subject
+      var selfMadeSubject = await isar.subjects.filter().slugEqualTo('self_made').findFirst();
+      if (selfMadeSubject == null) {
+        selfMadeSubject = isar_model.Subject()
+          ..name = 'Self Made'
+          ..slug = 'self_made'
+          ..colorCode = '0xFFBCAAA4';
+        await isar.writeTxn(() async {
+          await isar.subjects.put(selfMadeSubject!);
+        });
+        newSubject = true;
+      }
+      targetSubjectId = selfMadeSubject.id;
+      targetSubject = selfMadeSubject;
     }
 
     final newTopic = Topic()
       ..id = DateTime.now().millisecondsSinceEpoch // Use timestamp for custom topics
-      ..subjectId = selfMadeSubject.id
+      ..subjectId = targetSubjectId
       ..name = topicName
+      ..description = description
       ..isCompleted = false
       ..boxNumber = 0
       ..nextReviewDate = DateTime.now();
@@ -371,10 +383,15 @@ class SyllabusNotifier extends AsyncNotifier<SyllabusState> {
     
     final userId = ref.read(authStateProvider).valueOrNull?.uid;
     if (userId != null) {
-      if (newSubject) ref.read(syncServiceProvider).pushSubject(userId, selfMadeSubject!);
+      if (newSubject && targetSubject != null) {
+        ref.read(syncServiceProvider).pushSubject(userId, targetSubject);
+      }
       ref.read(syncServiceProvider).pushTopic(userId, newTopic);
     }
 
+    if (subjectId != null) {
+      ref.invalidate(topicsForSubjectProvider(subjectId));
+    }
     await reload();
   }
 }

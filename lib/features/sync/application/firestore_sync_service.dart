@@ -112,6 +112,7 @@ class FirestoreSyncService {
               'unreadNotes': topic.unreadNotes,
               'importantNotes': topic.importantNotes,
               'name': topic.name, // useful if it's a self-made topic
+              'description': topic.description,
               'subjectId': topic.subjectId,
               'updatedAt': FieldValue.serverTimestamp(),
             },
@@ -163,6 +164,7 @@ class FirestoreSyncService {
         'unreadNotes': topic.unreadNotes,
         'importantNotes': topic.importantNotes,
         'name': topic.name,
+        'description': topic.description,
         'subjectId': topic.subjectId,
         'updatedAt': FieldValue.serverTimestamp(),
       }, SetOptions(merge: true));
@@ -244,7 +246,8 @@ class FirestoreSyncService {
               local = Topic()
                 ..id = topicId
                 ..subjectId = data['subjectId'] as int
-                ..name = data['name'] as String;
+                ..name = data['name'] as String
+                ..description = data['description'] as String?;
             } else {
               continue;
             }

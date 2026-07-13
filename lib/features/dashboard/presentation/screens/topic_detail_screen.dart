@@ -27,6 +27,74 @@ class _TopicDetailScreenState extends ConsumerState<TopicDetailScreen> {
     super.dispose();
   }
 
+  void _showAddTopicDialog(BuildContext context, SubjectViewModel subject) {
+    final nameController = TextEditingController();
+    final descController = TextEditingController();
+
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          backgroundColor: AppTheme.surfaceContainer,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
+          title: Text('Add Custom Topic', style: AppTheme.headlineMd()),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              TextField(
+                controller: nameController,
+                style: AppTheme.bodyMd(),
+                textCapitalization: TextCapitalization.sentences,
+                decoration: InputDecoration(
+                  labelText: 'Topic Name',
+                  labelStyle: AppTheme.bodyMd(color: AppTheme.onSurfaceVariant),
+                  focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color: subject.accentColor)),
+                ),
+              ),
+              const SizedBox(height: 16),
+              TextField(
+                controller: descController,
+                style: AppTheme.bodyMd(),
+                textCapitalization: TextCapitalization.sentences,
+                decoration: InputDecoration(
+                  labelText: 'Description (Optional)',
+                  labelStyle: AppTheme.bodyMd(color: AppTheme.onSurfaceVariant),
+                  focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color: subject.accentColor)),
+                ),
+              ),
+            ],
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: Text('Cancel', style: AppTheme.labelSm(color: AppTheme.onSurfaceVariant)),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                final name = nameController.text.trim();
+                final desc = descController.text.trim();
+                if (name.isNotEmpty) {
+                  ref.read(syllabusProvider.notifier).addTopic(
+                    topicName: name,
+                    description: desc.isNotEmpty ? desc : null,
+                    subjectId: subject.id,
+                  );
+                  Navigator.pop(context);
+                }
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: subject.accentColor,
+                foregroundColor: AppTheme.background,
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+              ),
+              child: const Text('Add', style: TextStyle(fontWeight: FontWeight.bold)),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     // Watch live state to reflect toggle changes
@@ -38,6 +106,13 @@ class _TopicDetailScreenState extends ConsumerState<TopicDetailScreen> {
     return Scaffold(
       backgroundColor: AppTheme.background,
       extendBodyBehindAppBar: true,
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () => _showAddTopicDialog(context, liveSubject),
+        backgroundColor: liveSubject.accentColor,
+        shape: const StadiumBorder(),
+        icon: const Icon(Icons.add_rounded, color: AppTheme.background),
+        label: const Text('Add Topic', style: TextStyle(color: AppTheme.background, fontWeight: FontWeight.bold)),
+      ),
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         leading: IconButton(
